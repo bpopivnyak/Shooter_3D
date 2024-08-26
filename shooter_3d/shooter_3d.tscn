@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd6nl7g85cenh"]
+
+[ext_resource type="PackedScene" uid="uid://bho71jdcxajec" path="res://untitled.glb" id="1_sg5w5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_x4tv4"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jnpic"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cmlxx"]
+radius = 1.24159
+height = 2.48325
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0118027, 0.0450659, -0.0227728)
+mesh = SubResource("BoxMesh_x4tv4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_jnpic")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="untitled" parent="CharacterBody3D" instance=ExtResource("1_sg5w5")]
+transform = Transform3D(-0.997978, 0, 0.0635569, 0, 1, 0, -0.0635569, 0, -0.997978, 0, 1.39982, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0983691, 1.56727, 0.0412662)
+shape = SubResource("CapsuleShape3D_cmlxx")
