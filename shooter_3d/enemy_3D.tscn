@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfbd5l3wet0vj"]
+
+[ext_resource type="PackedScene" uid="uid://ixmq30u4jbly" path="res://enemy.glb" id="1_p46nx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wpnhe"]
+height = 2.86511
+radius = 4.34107
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.559757, 0, 0.828657, 0, 1, 0, -0.828657, 0, -0.559757, 0, 1.30896, 0)
+shape = SubResource("CylinderShape3D_wpnhe")
+
+[node name="enemy" parent="." instance=ExtResource("1_p46nx")]

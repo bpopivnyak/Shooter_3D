@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bho71jdcxajec"
-path="res://.godot/imported/untitled.glb-366c4440df010e25275eede91a7f7cb3.scn"
+uid="uid://ixmq30u4jbly"
+path="res://.godot/imported/enemy.glb-e60db7e273e17c031c97108ff9b263d9.scn"
 
 [deps]
 
-source_file="res://untitled.glb"
-dest_files=["res://.godot/imported/untitled.glb-366c4440df010e25275eede91a7f7cb3.scn"]
+source_file="res://enemy.glb"
+dest_files=["res://.godot/imported/enemy.glb-e60db7e273e17c031c97108ff9b263d9.scn"]
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
