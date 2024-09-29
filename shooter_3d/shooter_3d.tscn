@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dd6nl7g85cenh"]
 
 [ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_rufuc"]
-[ext_resource type="PackedScene" uid="uid://bho71jdcxajec" path="res://untitled.glb" id="1_sg5w5"]
+[ext_resource type="PackedScene" uid="uid://dpo8qffn1crbw" path="res://player_20.glb" id="2_b5htg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m02xs"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -22,8 +22,8 @@ size = Vector3(20, 1, 20)
 size = Vector3(20, 1, 20)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cmlxx"]
-radius = 1.24159
-height = 2.48325
+radius = 1.22662
+height = 4.67595
 
 [node name="Node3D" type="Node3D"]
 
@@ -46,12 +46,30 @@ shape = SubResource("BoxShape3D_jnpic")
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 script = ExtResource("1_rufuc")
 
-[node name="untitled" parent="CharacterBody3D" instance=ExtResource("1_sg5w5")]
-transform = Transform3D(-0.997978, 0, 0.0635569, 0, 1, 0, -0.0635569, 0, -0.997978, 0, 1.39982, 0)
+[node name="player_20" parent="CharacterBody3D" instance=ExtResource("2_b5htg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107086, 3.09287, 0)
+
+[node name="Skeleton3D" parent="CharacterBody3D/player_20/Armature" index="0"]
+bones/3/rotation = Quaternion(0.994318, -0.000201734, 6.35991e-05, -0.106452)
+bones/5/position = Vector3(2.36847, 0.383065, 0.307223)
+bones/5/rotation = Quaternion(0.726195, 0.647466, -0.0880771, -0.213709)
+bones/6/position = Vector3(2.19564, 0.272421, -0.215074)
+bones/6/rotation = Quaternion(0.733925, 0.673083, -0.0615916, -0.0672288)
+bones/7/position = Vector3(2.33318, 0.554202, -0.0137739)
+bones/7/rotation = Quaternion(0.0601228, 0.0234231, 0.711167, -0.700056)
+
+[node name="Cube" parent="CharacterBody3D/player_20/Armature/Skeleton3D" index="0"]
+transform = Transform3D(-0.232894, 0.00457206, -0.00295877, 0.0168672, 0.0626182, 0.00201637, 0.00743283, 0.00115882, -0.0972836, 2.70743, 0.316734, -0.0348808)
+bone_idx = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0983691, 1.56727, 0.0412662)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0983691, 3.06311, 0.0412662)
 shape = SubResource("CapsuleShape3D_cmlxx")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(-0.999645, 0, -0.0266305, 0, 1, 0, 0.0266305, 0, -0.999645, 0, 3.10605, -3.22853)
+transform = Transform3D(-0.00598645, 0, -0.999982, 0, 1, 0, 0.999982, 0, -0.00598645, -2.25958, 4.1526, 0.0542228)
+
+[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55395, 3.09185, -0.103699)
+
+[editable path="CharacterBody3D/player_20"]
