@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d28flmbqxm5ue"]
+
+[ext_resource type="PackedScene" uid="uid://cdjyjrc85tetc" path="res://tree.glb" id="1_a0pr3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nff8d"]
+radius = 2.62338
+height = 8.20033
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="tree" parent="." instance=ExtResource("1_a0pr3")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.137405, 1.84195, 0)
+shape = SubResource("CapsuleShape3D_nff8d")

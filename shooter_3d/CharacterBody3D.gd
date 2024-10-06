@@ -7,9 +7,9 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@onready var anima_player = $player_17_4/AnimationPlayer
+@onready var anima_player = $player_20/AnimationPlayer
 
-@onready var bullet_gun = load("res://bullet.tscn")
+@onready var bullet_gun = load("res://bullet_3d.tscn")
 @onready var ray = $RayCast3D
 
 var GUN = false

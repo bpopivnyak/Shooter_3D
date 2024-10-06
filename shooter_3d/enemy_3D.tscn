@@ -4,7 +4,7 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_wpnhe"]
 height = 2.86511
-radius = 4.34107
+radius = 4.13315
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 

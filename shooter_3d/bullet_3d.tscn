@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmmxeuicrnc43"]
+[gd_scene load_steps=5 format=3 uid="uid://cmmxeuicrnc43"]
+
+[ext_resource type="Script" path="res://bullet_3d.gd" id="1_0glua"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_asbnq"]
-radius = 0.208801
-height = 0.95068
+radius = 0.274074
+height = 0.922368
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2j6d6"]
+albedo_color = Color(0.678431, 0.431373, 0, 0.352941)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lat34"]
+material = SubResource("StandardMaterial3D_2j6d6")
 
 [node name="RigidBody3D" type="RigidBody3D"]
+script = ExtResource("1_0glua")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.00212936, -0.999998, 0, 0.999998, -0.00212936, -0.017831, -0.00956196, -0.105228)
