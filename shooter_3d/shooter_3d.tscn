@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dd6nl7g85cenh"]
+[gd_scene load_steps=13 format=3 uid="uid://dd6nl7g85cenh"]
 
+[ext_resource type="PackedScene" uid="uid://cdjyjrc85tetc" path="res://tree.glb" id="1_jhbg8"]
 [ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_rufuc"]
 [ext_resource type="PackedScene" uid="uid://ljtuwgee38m7" path="res://player_20.glb" id="2_b5htg"]
+[ext_resource type="PackedScene" uid="uid://bv8toy40xctq8" path="res://home.glb" id="2_gikro"]
 [ext_resource type="PackedScene" uid="uid://d28flmbqxm5ue" path="res://static_body_3d.tscn" id="3_npa3u"]
+[ext_resource type="PackedScene" uid="uid://cfbd5l3wet0vj" path="res://enemy_3D.tscn" id="6_3r53b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m02xs"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -44,6 +47,18 @@ mesh = SubResource("BoxMesh_x4tv4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_jnpic")
 
+[node name="tree" parent="StaticBody3D" instance=ExtResource("1_jhbg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96373, 1.72945, -8.12218)
+
+[node name="tree2" parent="StaticBody3D" instance=ExtResource("1_jhbg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.60294, 1.95294, -8.15805)
+
+[node name="tree3" parent="StaticBody3D" instance=ExtResource("1_jhbg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.362449, 1.85433, -6.72224)
+
+[node name="home" parent="StaticBody3D" instance=ExtResource("2_gikro")]
+transform = Transform3D(-0.999854, 0, 0.0170684, 0, 1, 0, -0.0170684, 0, -0.999854, -6.71433, 3.08748, 3.88484)
+
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 script = ExtResource("1_rufuc")
 
@@ -60,8 +75,7 @@ bones/7/position = Vector3(0.0222105, -0.0501858, 0.887092)
 bones/7/rotation = Quaternion(0.0571117, -0.158434, 0.985454, -0.0227597)
 
 [node name="Cube" parent="CharacterBody3D/player_20/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.00624051, 0.0627614, 0.0018795, 0.223015, -0.00196148, 0.0288414, 0.0693179, 0.000660373, -0.0929599, -0.197962, -0.415362, 0.764316)
-bone_idx = 8
+transform = Transform3D(0.0062405, 0.0627614, 0.00187951, 0.223015, -0.00196148, 0.0288414, 0.0693178, 0.00066038, -0.09296, -0.197962, -0.415362, 0.764317)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0983691, 3.06311, 0.0412662)
@@ -75,5 +89,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55395, 3.09185, -0.103699)
 
 [node name="StaticBody3D2" parent="." instance=ExtResource("3_npa3u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 7)
+
+[node name="CharacterBody3D2" parent="." instance=ExtResource("6_3r53b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.639664, 0.733019, 5.87758)
+
+[node name="StaticBody3D3" parent="." instance=ExtResource("3_npa3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.2211, 1.85198, -2.07212)
 
 [editable path="CharacterBody3D/player_20"]
